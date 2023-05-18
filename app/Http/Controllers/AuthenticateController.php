@@ -10,9 +10,12 @@ class AuthenticateController extends Controller
      * Display a listing of the resource.
      */
     private $method_no = 0;
+
     public function index()
     {
-        echo "Hello From ".get_class_methods($this)[$this->method_no = 0];
+       // echo "Hello From " . get_class_methods($this)[$this->method_no = 0];
+
+        return view('userdashboard');
     }
 
     /**
@@ -20,7 +23,7 @@ class AuthenticateController extends Controller
      */
     public function create()
     {
-        echo "Hello From ".get_class_methods($this)[$this->method_no = 1];
+        echo "Hello From " . get_class_methods($this)[$this->method_no = 1];
     }
 
     /**
@@ -28,7 +31,7 @@ class AuthenticateController extends Controller
      */
     public function store(Request $request)
     {
-        echo "Hello From ".get_class_methods($this)[$this->method_no = 2];
+        echo "Hello From " . get_class_methods($this)[$this->method_no = 2];
     }
 
     /**
@@ -36,7 +39,7 @@ class AuthenticateController extends Controller
      */
     public function show(string $id)
     {
-        echo "Hello From ".get_class_methods($this)[$this->method_no = 3];
+        echo "Hello From " . get_class_methods($this)[$this->method_no = 3];
     }
 
     /**
@@ -44,7 +47,7 @@ class AuthenticateController extends Controller
      */
     public function edit(string $id)
     {
-        echo "Hello From ".get_class_methods($this)[$this->method_no = 4];
+        echo "Hello From " . get_class_methods($this)[$this->method_no = 4];
     }
 
     /**
@@ -52,7 +55,7 @@ class AuthenticateController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        echo "Hello From ".get_class_methods($this)[$this->method_no = 5];
+        echo "Hello From " . get_class_methods($this)[$this->method_no = 5];
     }
 
     /**
@@ -60,6 +63,6 @@ class AuthenticateController extends Controller
      */
     public function destroy(string $id)
     {
-        echo "Hello From ".get_class_methods($this)[$this->method_no = 6];
+        echo "Hello From " . get_class_methods($this)[$this->method_no = 6];
     }
 }
