@@ -17,5 +17,6 @@ use App\Http\Controllers\AuthenticateController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('user',[AuthenticateController::class,'index']);
-//Route::resource('user',AuthenticateController::class);
+//Route::get('user',[AuthenticateController::class,'index']);
+
+Route::resource('user',AuthenticateController::class);

@@ -23,7 +23,8 @@ class AuthenticateController extends Controller
      */
     public function create()
     {
-        echo "Hello From " . get_class_methods($this)[$this->method_no = 1];
+        echo "Hello From  " . get_class_methods($this)[$this->method_no = 1];
+        return view('register');
     }
 
     /**
