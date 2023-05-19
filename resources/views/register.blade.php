@@ -13,6 +13,7 @@
 <div class="container-fluid">
     <div class="d-flex align-items-center justify-content-center">
 
+       {{-- id name gender email password url is_active last_login_date created_at updated_at
 
         <form action="{{route('user.store')}}" method="post"
               class="col-sm-12 col-md-6 col-lg-4 needs-validation bg-white p-3 mt-5 rounded-3">
@@ -25,6 +26,26 @@
                     Please Input Name.
                 </div>
             </div>
+            <div class="form-check mb-2 was-validated">
+                <p>Gender : </p>
+                <span>
+
+                <input type="radio" name="gender" id="gender" class="form-check-input" value="M" required>
+                <label for="gender" class="form-check-label">Male</label>
+
+                    <input type="radio" name="gender" id="gender" class="form-check-input" value="M" required>
+                <label for="gender" class="form-check-label">Male</label>
+
+                    <input type="radio" name="gender" id="gender" class="form-check-input" value="M" required>
+                <label for="gender" class="form-check-label">Male</label>
+
+                <div class="invalid-feedback">
+                    Please Input Gender.
+                </div>
+                </span>
+            </div>
+
+
             <div class="form-group mb-2 was-validated">
                 <label for="email" class="form-label">Name : </label>
                 <input type="email" name="email" id="email" class="form-control" required>
@@ -34,7 +55,39 @@
             </div>
 
             <button class="btn btn-primary w-100" type="submit">Register</button>
+        </form>--}}
+
+
+{{--     *************************************************************************   --}}
+
+        <form id="quickForm" class="col-6" action="{{route('user.store')}}" method="post">
+            @csrf
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group mb-0">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
+                        <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </form>
+
+
+
+
+
 
 
     </div>
