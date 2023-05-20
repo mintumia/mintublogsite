@@ -5,8 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Register Page</title>
+    <title>Page Name</title>
     <link rel="stylesheet" href="{{url('/')}}/libraries/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url('/')}}/libraries/adminlte_v3.2/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{url('/')}}/libraries/adminlte_v3.2/dist/css/adminlte.min.css">
 </head>
 <body>
 
@@ -64,6 +66,10 @@
             @csrf
             <div class="card-body">
                 <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Full Name">
+                </div>
+                <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
@@ -94,5 +100,74 @@
 </div>
 
 <script src="{{url('/')}}/libraries/bootstrap.min.js"></script>
+<!-- jQuery -->
+<script src="{{url('/')}}/libraries/adminlte_v3.2/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{{url('/')}}/libraries/adminlte_v3.2/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jquery-validation -->
+<script src="{{url('/')}}/libraries/adminlte_v3.2/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{{url('/')}}/libraries/adminlte_v3.2/plugins/jquery-validation/additional-methods.min.js"></script>
+<!-- AdminLTE App -->
+<script src="{{url('/')}}/libraries/adminlte_v3.2/dist/js/adminlte.min.js"></script>
+
+
+
+
+<script>
+    $(function () {
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert( "Form successful submitted!" );
+            }
+        });
+        $('#quickForm').validate({
+            rules: {
+
+                names: {
+                    required: true,
+                    names: true,
+                },
+                email: {
+                    required: true,
+                    email: true,
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                terms: {
+                    required: true
+                },
+            },
+            messages: {
+                names: {
+                    required: "Please enter a Name",
+                    names: "Please enter a valid Name"
+                },
+                email: {
+                    required: "Please enter a email address",
+                    email: "Please enter a valid email address"
+                },
+                password: {
+                    required: "Please provide a password",
+                    minlength: "Your password must be at least 5 characters long"
+                },
+                terms: "Please accept our terms"
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
