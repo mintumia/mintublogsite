@@ -123,13 +123,13 @@
         $('#quickForm').validate({
             rules: {
 
-                names: {
+                name: {
                     required: true,
-                    names: true,
+                   minlength: 3
                 },
                 email: {
                     required: true,
-                    email: true,
+                    email: true
                 },
                 password: {
                     required: true,
@@ -142,7 +142,7 @@
             messages: {
                 names: {
                     required: "Please enter a Name",
-                    names: "Please enter a valid Name"
+                    minlength: "Please Input Minimum 3 Characters."
                 },
                 email: {
                     required: "Please enter a email address",
