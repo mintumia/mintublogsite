@@ -20,3 +20,7 @@ Route::get('/', function () {
 //Route::get('user',[AuthenticateController::class,'index']);
 
 Route::resource('user',AuthenticateController::class);
+
+Route::get('test', function () {
+    return view('test');
+})->name('test');

@@ -11,6 +11,12 @@
 <body>
 <h1>Welcome to User Home Page.</h1>
 
+@foreach($forms as $key => $user )
+    <pre>
+{{$user}}
+
+@endforeach
+
 
 
 

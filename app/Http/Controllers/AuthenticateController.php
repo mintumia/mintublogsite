@@ -32,7 +32,11 @@ class AuthenticateController extends Controller
      */
     public function store(Request $request)
     {
-        echo "Hello From " . get_class_methods($this)[$this->method_no = 2];
+
+
+        $forms = $request->all();
+
+        return view('userdashboard',compact('forms'));
     }
 
     /**
