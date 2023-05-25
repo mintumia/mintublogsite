@@ -26,16 +26,19 @@
 
 
 
-<script src="{{url('/')}}/libraries/bootstrap.min.js"></script>
 <!-- jQuery -->
 <script src="{{url('/')}}/libraries/adminlte_v3.2/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="{{url('/')}}/libraries/adminlte_v3.2/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- jquery-validation -->
 <script src="{{url('/')}}/libraries/adminlte_v3.2/plugins/jquery-validation/jquery.validate.min.js"></script>
+{{--bootstrap 5--}}
+<script src="{{url('/')}}/libraries/bootstrap.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{{url('/')}}/libraries/adminlte_v3.2/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <script src="{{url('/')}}/libraries/adminlte_v3.2/plugins/jquery-validation/additional-methods.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{url('/')}}/libraries/adminlte_v3.2/dist/js/adminlte.min.js"></script>
+<!--Custom Jquery Code-->
 <script src="{{url('/')}}/libraries/main.js"></script>
 
 </body>

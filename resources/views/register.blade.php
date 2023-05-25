@@ -23,6 +23,12 @@
         <form id="quickForm" class="col-6" action="{{route('user.store')}}" method="post">
             @csrf
             <div class="card-body">
+
+                <div class="form-group">
+                    <label for="test">Test Text : </label>
+                    <input type="text" name="tests" class="form-control" id="test" placeholder="Full Name">
+                </div>
+
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" name="name" class="form-control" id="name" placeholder="Full Name">
@@ -73,14 +79,21 @@
 
 <script>
     $(function () {
-        // $.validator.setDefaults({
-        //     submitHandler: function () {
-        //        // alert( "Form successful submitted!" );
-        //
-        //     }
-        // });
+
+        $.validator.addMethod('testvalided',function (value,element,args) {
+
+            return /^[a-zA-Z0-9]/.test(value);
+
+        },'OOKKK');
+
+
         $('#quickForm').validate({
-            rules: {
+          rules: {
+              tests:{
+                  required:true,
+                  testvalided:true
+
+              },
 
                 name: {
                     required: true,
@@ -99,7 +112,14 @@
                 },
             },
             messages: {
-                names: {
+
+                tests:{
+                    required:"Is Required",
+                    testvalided:"[a-z] Only."
+
+                },
+
+                name: {
                     required: "Please enter a Name",
                     minlength: "Please Input Minimum 3 Characters."
                 },
@@ -123,6 +143,13 @@
             },
             unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
+            }
+        });
+
+        $('#quickForm').validate({
+            submitHandler: function (form) {
+
+                form.submit();
             }
         });
     });
