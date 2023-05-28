@@ -11,11 +11,26 @@
 <body>
 <h1>Welcome to User Home Page.</h1>
 
-@foreach($forms as $key => $user )
-    <pre>
+<a class="btn btn-success w-100" href="{{route('user.create')}}">New Register</a>
+
+
+@isset($forms)
+    @foreach($forms as $key => $user )
+        <pre>
 {{$user}}
 
-@endforeach
+            @endforeach
+
+            @else
+                @php
+                    header('location: /user/create');
+                    exit();
+
+                @endphp
+            @endisset
+
+
+
 
 
 

@@ -82,7 +82,7 @@
 
         $.validator.addMethod('testvalided',function (value,element,args) {
 
-            return /^[a-zA-Z0-9]/.test(value);
+            return /^[a-z ,.'-]+$/i.test(value);
 
         },'OOKKK');
 
@@ -115,7 +115,7 @@
 
                 tests:{
                     required:"Is Required",
-                    testvalided:"[a-z] Only."
+                    testvalided:"Input A Valid Name. [a-zA-Z]Only."
 
                 },
 
