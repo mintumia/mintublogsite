@@ -24,3 +24,5 @@ Route::resource('user',AuthenticateController::class);
 Route::get('test', function () {
     return view('test');
 })->name('test');
+
+Route::get('testmain',[AuthenticateController::class,'testmain']);

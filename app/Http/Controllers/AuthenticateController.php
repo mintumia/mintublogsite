@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AuthenticateController extends Controller
 {
@@ -32,11 +33,13 @@ class AuthenticateController extends Controller
      */
     public function store(Request $request)
     {
+        $forms =  $request->all();
 
 
-        $forms = $request->all();
+       // dd($forms);
+       //htmlentities($forms);
 
-        return view('userdashboard',compact('forms'));
+       return view('userdashboard',compact('forms'));
     }
 
     /**
@@ -70,4 +73,9 @@ class AuthenticateController extends Controller
     {
         echo "Hello From " . get_class_methods($this)[$this->method_no = 6];
     }
+    public  function testmain(){
+
+        return view('main');
+    }
+
 }

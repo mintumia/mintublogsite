@@ -17,17 +17,19 @@
 @isset($forms)
     @foreach($forms as $key => $user )
         <pre>
-{{$user}}
+        </pre>
 
-            @endforeach
+        {{$user}}
 
-            @else
-                @php
-                    header('location: /user/create');
-                    exit();
+    @endforeach
 
-                @endphp
-            @endisset
+@else
+    @php
+        header('location: /user/create');
+        exit();
+
+    @endphp
+@endisset
 
 
 
