@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticateController;
+use App\Providers;
+use App\MServiceContainer\MintuContainer;
+use Illuminate\Support\Facades\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +16,15 @@ use App\Http\Controllers\AuthenticateController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//App()->bind("Mintu",MintuProvider::class);
 
 Route::get('/', function () {
-    return view('welcome');
+
+   // dd(app());
+
+  return view('welcome');
+
+
 });
 //Route::get('user',[AuthenticateController::class,'index']);
 
@@ -26,3 +35,14 @@ Route::get('test', function () {
 })->name('test');
 
 Route::get('testmain',[AuthenticateController::class,'testmain']);
+Route::get('/container',function (MintuContainer $mintu){
+
+    /*echo "<pre>";
+    print_r($mintu->getNum());
+    echo "</pre>";*/
+    //echo $mintu->getNum();
+    echo $mintu->test();
+
+    //dd(app());
+})->name('container');
+

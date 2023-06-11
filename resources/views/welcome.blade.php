@@ -20,6 +20,8 @@
     <a class="alert-primary d-block " href="{{route('user.create')}}">User Register</a>
     <br>
         <a class="alert-primary d-block " href="{{route('test')}}">Goto Test Page</a>
+    <br>
+    <a class="alert-primary d-block " href="{{route('container')}}">Goto Container Page</a>
 
 
 
