@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticateController;
 use App\Providers;
+use App\MServiceContainer\MintuContainerInterface;
 use App\MServiceContainer\MintuContainer;
 use Illuminate\Support\Facades\Request;
 
@@ -37,12 +38,10 @@ Route::get('test', function () {
 Route::get('testmain',[AuthenticateController::class,'testmain']);
 Route::get('/container',function (MintuContainer $mintu){
 
-    /*echo "<pre>";
-    print_r($mintu->getNum());
-    echo "</pre>";*/
-    //echo $mintu->getNum();
-    echo $mintu->test();
 
-    //dd(app());
+    dump($mintu->getNum());
+
+
+   // dd(app());
 })->name('container');
 

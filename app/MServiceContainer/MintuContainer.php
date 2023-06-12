@@ -6,38 +6,20 @@ use mysql_xdevapi\Collection;
 
 class MintuContainer implements MintuContainerInterface
 {
-    public $num = 0;
 
-    /*public function __construct($num)
+
+    private $transection_id;
+
+    public function __construct(string $transection_id)
     {
-        $this->num = $num;
 
-    }*/
 
-    public function pay(): array
+        $this->transection_id = $transection_id;
+    }
+    public function getNum(): string
     {
-       $mm = [];
-        for ($a = 0; $a < 10; $a++) {
-
-            $mm[$a] = "Hello from MintuContainer : {$a}";
-
-
-        }
-
-        return $mm ;
+       return $this->transection_id;
     }
 
-    public function test():string
-    {
-        return "Hello from Test";
-
-    }
-
-    public function getNum():int
-    {
-
-        return 20;
-
-    }
 
 }
