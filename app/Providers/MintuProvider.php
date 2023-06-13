@@ -22,11 +22,20 @@ class MintuProvider extends ServiceProvider implements DeferrableProvider
             return new MintuContainer(" Hellos");
         });*/
 
-        $this->app->bind(MintuContainer::class,function () {
+        $this->app->singleton(MintuContainer::class,function () {
 
            // $text = "mintu--".rand(1,500);
-            return new MintuContainer("mintu--".rand(1,500));
+            return new MintuContainer("mintu--".rand(1,500),"Mintu Mia");
         });
+
+
+        /*$this->app->when(MintuContainer::class)
+            ->needs(MintuContainer::class)
+            ->give(function (){
+              return new MintuContainer("mintu--".rand(1,500),"Mintu Mia");
+            });*/
+
+
     }
 
     /**

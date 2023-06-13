@@ -39,7 +39,7 @@ Route::get('testmain',[AuthenticateController::class,'testmain']);
 Route::get('/container',function (MintuContainer $mintu){
 
 
-    dump($mintu->getNum());
+    echo($mintu->getNum());
 
 
    // dd(app());

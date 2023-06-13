@@ -2,14 +2,21 @@
 
 namespace App\MServiceContainer;
 
-class Mintu2Container //implements MintuContainerInterface
+class Mintu2Container implements MintuContainerInterface
 {
 
-public $name = "Hello from Container 02: ";
+    private $transection_id;
+    private $name;
 
-    public function getNum():string
+    public function __construct(string $transection_id,string $name)
     {
 
-        return $this->name;
+
+        $this->transection_id = $transection_id;
+        $this->name = $name;
+    }
+    public function getNum(): string
+    {
+        return $this->transection_id." Name from Mintu02 is : ".$this->name;
     }
 }
