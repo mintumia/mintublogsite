@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('authenticates', function (Blueprint $table) {
-            $table->id();//id	name	gender	email	password	url	is_active
+            $table->id();
             $table->string('name',120);
             $table->enum('gender',["M","F","O"]);
             $table->string('email',150);
